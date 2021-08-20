@@ -12,6 +12,6 @@ if (horas < 12) {
     alert('boa noite')
 
 } */
-var nome = document.getElementById('exempl').innerHTML="Hélio Tomé"
+var nome = document.getElementById('exempl').innerHTML="Hélio Tomé APRENDENDO JAVASCRIPT "
 //var nome = 'Helio'
 //document.write(nome)
