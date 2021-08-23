@@ -9,7 +9,10 @@ margin: 0 auto;}
     margin-top: 30px;
     padding:10px;
 }
-
+/*
 .verde{background-color: rgb(25, 226, 41);}
 .amarelo{background-color: #F0FF33;}
 .azul{background-color: rgb(87, 13, 224);}
+*/
+.preto{background-color:black;}
+.vermelho{background-color:red;}
