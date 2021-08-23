@@ -17,12 +17,13 @@ if (horas < 12) {
 //document.write(nome)
 //var colorir = document.getElementsByClassName('cor')
 function amarelo(){
- document.querySelector('#exempl').classList.add('amarelo');
+ window.document.querySelector('#exempl').classList.add('amarelo');
+
 }
 function verde(){
-    document.querySelector('#exempl') 
+    document.querySelector('#exempl').classList.add('verde');
 
 }
 function azul(){
-    document.querySelector('#exempl') 
+    document.querySelector('#exempl').classList.add('azul') ;
 }
