@@ -15,4 +15,14 @@ if (horas < 12) {
 //var nome = document.getElementById('exempl').innerHTML="Hélio Tomé APRENDENDO JAVASCRIPT "
 //var nome = 'Helio'
 //document.write(nome)
-var colorir = document.getElementsByClassName('cor')
+//var colorir = document.getElementsByClassName('cor')
+function amarelo(){
+ document.querySelector('#exempl').classList.add('amarelo');
+}
+function verde(){
+    document.querySelector('#exempl') 
+
+}
+function azul(){
+    document.querySelector('#exempl') 
+}
