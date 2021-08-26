@@ -4,15 +4,19 @@ width: 300px;
 height: 300px;
 border:solid 1px silver;
 padding: 10px;
-margin: 0 auto;}
+margin: 0 auto;
+position: relative;
+border-radius: 10px;}
 #contato{
     margin-top: 30px;
     padding:10px;
 }
-/*
+
 .verde{background-color: rgb(25, 226, 41);}
 .amarelo{background-color: #F0FF33;}
 .azul{background-color: rgb(87, 13, 224);}
-*/
-.preto{background-color:black;}
-.vermelho{background-color:red;}
+
+.preto{background-color:black;
+margin: 0 auto;}
+.vermelho{background-color:red;
+margin-top: 40px;}

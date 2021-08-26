@@ -40,8 +40,12 @@ function trocar(){
     if(document.querySelector('button').classList.contains('preto')){
         document.querySelector('button').classList.remove('preto')
         document.querySelector('button').classList.add('vermelho')
+        document.getElementById('exempl').classList.add('verde')
+        document.getElementById('exempl').classList.remove('amarelo')
     }else {
 document.querySelector('button').classList.remove('vermelho')
 document.querySelector('button').classList.add('preto')
+document.getElementById('exempl').classList.add('amarelo')
+document.getElementById('exempl').classList.remove('verde')
     }
 }
