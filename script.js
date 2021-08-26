@@ -49,9 +49,16 @@ document.getElementById('exempl').classList.add('amarelo')
 document.getElementById('exempl').classList.remove('verde')
     }
 }
-function trocarTitulo(){
-    document.getElementById('titulo').innerHTML="trocou os titulos"
-    document.getElementById('campo').value="trocou o campo"
+function trocarTitulo(titulo){
+    document.getElementById('titulo').innerHTML = titulo //"trocou os titulos"
+    document.getElementById('campo').value = titulo //"trocou o campo"
 
 }
-//trocarTitulo();
+//trocarTitulo("Titulo de Exemplo");
+function somar(x,y){
+let total = x + y
+//document.getElementById('campo').value = total
+return total
+}
+var resultado = somar(6,8)
+console.log(resultado)
