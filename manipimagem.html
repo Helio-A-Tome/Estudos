@@ -8,10 +8,11 @@
     <title>Document</title>
 </head>
 <body>
-    <img src="images/dog.jpg" class="imagem" alt="cão">
+    <img src="images/dog.jpg" class="imagem"  data-animal="cachorro" alt="cão" >
     <br>
-    <button onclick="trocarImagem('dog.jpg')"> cão</button>
-    <button onclick="trocarImagem('gato.jpg')">gato</button>
+    <button onclick="trocarImagem('dog.jpg','cachorro')"> cão</button>
+    <button onclick="trocarImagem('gato.jpg','gato')">gato</button>
+    <button onclick="pegarAnimal()">que animal é esse?</button>
     <script src="manipImagem.js"></script>
 
 </body>
