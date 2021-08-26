@@ -49,3 +49,9 @@ document.getElementById('exempl').classList.add('amarelo')
 document.getElementById('exempl').classList.remove('verde')
     }
 }
+function trocarTitulo(){
+    document.getElementById('titulo').innerHTML="trocou os titulos"
+    document.getElementById('campo').value="trocou o campo"
+
+}
+//trocarTitulo();
