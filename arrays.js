@@ -12,4 +12,4 @@ let ingredientes = [
     ['uva','pera','laranja','goiaba'],
     ['arroz','feijao','cebola','alho']
 ]
-console.log(ingredientes[1][0])
+console.log(ingredientes[0][3])
