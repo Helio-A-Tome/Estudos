@@ -5,7 +5,7 @@ let carro = {
     ligado:false,
     desligado:false,
     desligar:function(){
-       // this.desligado = true
+        //this.desligado = true
        if(this.ligado == false){
             console.log(" o " + this.modelo + " esta desligado")
         }
