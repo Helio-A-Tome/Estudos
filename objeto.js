@@ -5,8 +5,8 @@ let carro = {
     ligado:false,
     desligado:false,
     desligar:function(){
-        //this.desligado = true
-        if(this.ligado == false){
+       // this.desligado = true
+       if(this.ligado == false){
             console.log(" o " + this.modelo + " esta desligado")
         }
     },
@@ -29,6 +29,7 @@ function partida(){
     carro.ligar()
 }
 function parar(){
+    
     carro.desligar()
 }
 console.log(carro['nome'])//esta em desuso
@@ -38,3 +39,20 @@ console.log(carro.acelerar())
 
 //carro.ligar()
 carro.acelerar()
+
+//array de objetos
+/*
+let veiculos=[
+    {nome:"FIAT" , modelo:"UNO"},
+    {nome:"VV" , modelo:"Fusca"},
+    {nome:"FIAT" , modelo:"Palio"},
+    {nome:"FIAT" , modelo:"UNO"},
+    {nome:"VV" , modelo:"Kombi"},
+    {nome:"FIAT" , modelo:"UNO Mille"}
+
+]*/
+/*
+console.log(veiculos[3,3])
+console.log(veiculos.modelo)
+    */
+
