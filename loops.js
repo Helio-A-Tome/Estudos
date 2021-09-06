@@ -25,4 +25,9 @@ while(c <10){
     html += "numero : " + c +"<br/>"
     c++
 }
+//for é mais eficiente
+for(let c =1;c <=10;c++){
+
+    html += "numero : " + c +"<br/>"
+}
 document.getElementById("demo").innerHTML=html
