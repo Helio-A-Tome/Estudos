@@ -19,8 +19,13 @@ function showTime(){
     document.querySelector('.demo').innerHTML = txt
 }
 */
+let timer
 function continuar(){
-    setTimeout(function (){
+    timer = setTimeout(function (){
         alert('rodou!')
     },2000)
+    document.querySelector('.demo').innerHTML='rodou'
+}
+function parar(){
+    clearTimeOut(timer)
 }
