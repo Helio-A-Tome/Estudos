@@ -1,5 +1,5 @@
-let lista =[45, 4, 9, 16, 25]// ['ovo','farinha','açucar','leite']
-lista2 =[]
+//let lista =[45, 4, 9, 16, 25]// ['ovo','farinha','açucar','leite']
+//lista2 =[]
 //let lista2 =['prato','liquidificador', 'forno','batedeira']
 //lista [0] ='ovos' // altera o nome do item do array
 //lista[4]='fermento'//adiciona itens ao array
@@ -59,6 +59,38 @@ lista2 = lista.some(function(item){
 lista2 = lista.some(function(item){
     return (item < 10)? true:false
 })
-*/
+
+let lista =[
+    {id:1,nome:'Helio',sobrenome:'Tome'},
+    {id:2,nome:'katia',sobrenome:'Trindade'},
+    {id:3,nome:'Matheus',sobrenome:'Tome'}
+]
+lista2 = lista.find(function(item,index){
+if(item == 0){
+return true
+}else{
+    return false
+}
+
+})
+let lista =[45, 4, 9, 16, 25]
+lista2= lista.find(function(item,index){//findIndex indica a posição do item
+    return (item==16)? true:false
+})*/
+let lista =[
+    {id:1,nome:'Helio',sobrenome:'Tome'},
+    {id:2,nome:'katia',sobrenome:'Trindade'},
+    {id:3,nome:'Matheus',sobrenome:'Tome'}
+]
+lista2 = lista.find(function(item,index){
+//return (item.sobrenome == 'Tome' )? true:false
+if(index == 2){
+    return true
+}else{
+     return false
+}
+
+})
+
 res = lista2
 console.log(res)
