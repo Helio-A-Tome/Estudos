@@ -27,5 +27,5 @@ function continuar(){
     document.querySelector('.demo').innerHTML='rodou'
 }
 function parar(){
-    clearTimeOut(timer)
+    clearTimeout(timer)
 }
