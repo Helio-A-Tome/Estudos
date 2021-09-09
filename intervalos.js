@@ -1,3 +1,4 @@
+/*
 let timer
 
 function continuar(){
@@ -16,4 +17,10 @@ function showTime(){
     let txt = h + ':'+ m + ':'+ s
 
     document.querySelector('.demo').innerHTML = txt
+}
+*/
+function continuar(){
+    setTimeout(function (){
+        alert('rodou!')
+    },2000)
 }
