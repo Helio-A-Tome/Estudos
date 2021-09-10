@@ -7,7 +7,10 @@ let pessoa = {
     altura: 1.76,
     social:{
         facebook:'htom',
-        instagram:'Tom'
+        instagram:{
+            url:'@htom',
+            seguidores:1000
+        }
     },
     nomeCompleto:function(){
         return ` ${this.nome}  ${this.sobrenome} `
