@@ -25,10 +25,13 @@ function pegarTemperatura(){
     })
     
 }
+console.log('codigo antes')
 let temp = pegarTemperatura()
+console.log('codigo durante')
 temp.then(function(resultado){
     console.log('temperatura : '+ resultado)
 })
 temp.catch(function(error){
     console.log('deu erro' + error)
 })
+console.log('codigo depois')
