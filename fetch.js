@@ -1,6 +1,13 @@
 //https://jsonplaceholder.typicode.com/posts
-function loadPosts(){
-    document.getElementById('posts').innerHTML = 'carregando .....'
+//Async e Await
+async function loadPosts(){
+
+    let req = await fetch('https://jsonplaceholder.typicode.com/posts')
+    let json = await req.json()
+
+        montarBlog(json)
+    
+/*     document.getElementById('posts').innerHTML = 'carregando .....'
 fetch('https://jsonplaceholder.typicode.com/posts')
 .then(function(resultado){
     return resultado.json()
@@ -13,7 +20,7 @@ fetch('https://jsonplaceholder.typicode.com/posts')
 })
 .catch(function(error){
     console.log('deu problema')
-})
+}) */
 }
 function montarBlog(lista){//função para exibir os posts
     let html=''
@@ -26,3 +33,5 @@ function montarBlog(lista){//função para exibir os posts
     }
     document.getElementById('posts').innerHTML= html
 }
+
+//Fetch com POST
