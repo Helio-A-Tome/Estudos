@@ -1,6 +1,7 @@
 //estrutura
-let dia = 3
+let dia = 6
 let diaNome =''
+/*
 switch(dia){
     case 1:
     diaNome = 'domingo'
@@ -22,8 +23,31 @@ switch(dia){
         break
     case 7:
         diaNome = 'sabado'
-        break            
+        break 
 
-
+        
 }
-console.log(diaNome)
+
+switch(dia){
+    case 7:
+        diaNome = 'final de semana'
+        break
+    case 1:
+        diaNome = 'final de semana'
+        break
+        default:
+            diaNome = 'dia de semana'    
+            break
+
+} outr variação abaixo
+*/
+switch(dia){
+    case 7:
+    case 1:
+        diaNome = 'final de Semana'
+        break
+        default:
+            diaNome= 'dia de semana'
+            break
+}
+document.getElementById("dia").innerHTML= diaNome
