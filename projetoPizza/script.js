@@ -58,4 +58,5 @@ pizzaJson.map((item,index)=>{
    c('.pizza-area').append(pizzaItem)
   
 })
+//12h10min-22/09/2021
    
