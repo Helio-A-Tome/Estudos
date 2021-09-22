@@ -58,4 +58,4 @@ pizzaJson.map((item,index)=>{
    c('.pizza-area').append(pizzaItem)
   
 })
-   
+   //teste
