@@ -28,8 +28,11 @@ pizzaJson.map((item,index)=>{
             c('.pizzaBig img').src = pizzaJson[key].img
             c('.pizzaInfo--actualPrice').innerHTML = `R$ ${pizzaJson[key].price.toFixed(2)}`
 
+                    //desselecionar o item
+
                 c('.pizzaInfo--size.selected').classList.remove('selected')
                
+            //implementando tamanhos das pizzas
 
             cs('.pizzaInfo--size').forEach((size,sizeIndex)=>{
 
@@ -41,6 +44,7 @@ pizzaJson.map((item,index)=>{
                 size.querySelector('span').innerHTML =pizzaJson[key].sizes[sizeIndex]
               
             })
+            //até aqui implementação de tamanho das pizzas
             c('.pizzaInfo--qt').innerHTML=modalQt
 
 
@@ -48,6 +52,7 @@ pizzaJson.map((item,index)=>{
             c('.pizzaInfo--desc').innerHTML= pizzaJson[key].description
             c('.pizzaWindowArea').style.opacity= 0
             c('.pizzaWindowArea').style.display= 'flex'
+
             setTimeout(()=>{
                 c('.pizzaWindowArea').style.opacity = 1
 
@@ -58,4 +63,16 @@ pizzaJson.map((item,index)=>{
    c('.pizza-area').append(pizzaItem)
   
 })
-   //teste
+   //eventos do modal
+   function fechaModal(){
+       c('.pizzaWindowArea').style.opacity = 0
+       setTimeout(() => {
+           c('.pizzaWindowArea').style.display = 'none'
+       },500 );
+   }
+   cs('.pizzaInfo--cancelButton, .pizzaInfo--cancelMobileButton').forEach((item)=>{
+     item.addEventListener('click', fechaModal)
+   })
+
+  
+   
