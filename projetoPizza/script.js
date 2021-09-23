@@ -12,7 +12,9 @@ const cs =(el)=>document.querySelectorAll(el)
 
 pizzaJson.map((item,index)=>{
     let pizzaItem = c('.models .pizza-item').cloneNode(true)
+
     //preencher as informações de pizza-item
+
     pizzaItem.setAttribute('data-key',index) 
     pizzaItem.querySelector('.pizza-item--img img').src= item .img
     pizzaItem.querySelector('.pizza-item--price').innerHTML= `R$ ${item.price.toFixed(2)}`
@@ -72,6 +74,18 @@ pizzaJson.map((item,index)=>{
    }
    cs('.pizzaInfo--cancelButton, .pizzaInfo--cancelMobileButton').forEach((item)=>{
      item.addEventListener('click', fechaModal)
+   })
+
+   c('.pizzaInfo--qtmais').addEventListener('click',()=>{
+       modalQt++
+       c('.pizzaInfo--qt').innerHTML=modalQt
+
+   })
+   c('.pizzaInfo--qtmenos').addEventListener('click',()=>{
+       if(modalQt > 1){
+           modalQt--
+           c('.pizzaInfo--qt').innerHTML= modalQt
+       }
    })
 
   
