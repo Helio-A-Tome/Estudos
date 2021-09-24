@@ -104,19 +104,30 @@ cs('.pizzaInfo--size').forEach((size,sizeIndex)=>{
       let tam =parseInt(c('.pizzaInfo--size.selected').getAttribute('data-key'))
 
       let identificador = pizzaJson[modalKey].id+'@'+ tam
+     /*  let key = cart.findIndex((item)=>{
+          return item.identificador == identificador
+      }) */
+      //ou
+      let key = cart.findIndex((item)=> item.identificador == identificador )
 
-      cart.push({
-          identificador,
-          id:pizzaJson[modalKey].id,
-          tam,
-          qt:modalQt
+      if(key > -1){
 
-      })
-    fechaModal()
+      }else{
+        cart.push({
+            identificador,
+            id:pizzaJson[modalKey].id,
+            tam,
+            qt:modalQt
+  
+        })
+        fechaModal()
+        
+      }
+
 
      /*  console.log(tam)
       //quantas pizzas
       console.log(modalQt) */
 
   })
-   
+  
