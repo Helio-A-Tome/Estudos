@@ -1,10 +1,8 @@
-/* function adicionarPizza(){
-    let pizzaItem = document.querySelector('.models ,pizza-item').cloneNode(true)
-    //preencher as informações de pizza-item
-    document.querySelector('.pizza-area').append(pizzaItem)
-} */
-//substituir querySelector por uma letra
+//declaraçoes de variaveis
+let cart =[]
 let modalQt=1
+let modalKey = 0
+//substituir querySelector por uma letra
 const c = (el)=>{
     return document.querySelector(el)
 }
@@ -25,6 +23,7 @@ pizzaJson.map((item,index)=>{
 
             let key = e.target.closest('.pizza-item').getAttribute('data-key')
             modalQt=1
+            modalKey = key
 
             //console.log(pizzaJson[key])
             c('.pizzaBig img').src = pizzaJson[key].img
@@ -72,21 +71,52 @@ pizzaJson.map((item,index)=>{
            c('.pizzaWindowArea').style.display = 'none'
        },500 );
    }
+   //ação do botao cancelar
    cs('.pizzaInfo--cancelButton, .pizzaInfo--cancelMobileButton').forEach((item)=>{
      item.addEventListener('click', fechaModal)
    })
-
+//açoes de botao +
    c('.pizzaInfo--qtmais').addEventListener('click',()=>{
        modalQt++
        c('.pizzaInfo--qt').innerHTML=modalQt
 
    })
+   //açoes de botao-
    c('.pizzaInfo--qtmenos').addEventListener('click',()=>{
        if(modalQt > 1){
            modalQt--
            c('.pizzaInfo--qt').innerHTML= modalQt
        }
    })
+//seleção de tamanhos
+cs('.pizzaInfo--size').forEach((size,sizeIndex)=>{
 
-  
+   size.addEventListener('click',(e)=>{
+       c('.pizzaInfo--size.selected').classList.remove('selected')
+       size.classList.add('selected')
+   })
+})
+  //adicionar ações ao carrinho de compras
+  c('.pizzaInfo--addButton').addEventListener('click',()=>{
+      /* //qual é a pizza
+      console.log('pizza'+ modalKey)
+      //qual o tamanho da pizza */
+      let tam =parseInt(c('.pizzaInfo--size.selected').getAttribute('data-key'))
+
+      let identificador = pizzaJson[modalKey].id+'@'+ tam
+
+      cart.push({
+          identificador,
+          id:pizzaJson[modalKey].id,
+          tam,
+          qt:modalQt
+
+      })
+    fechaModal()
+
+     /*  console.log(tam)
+      //quantas pizzas
+      console.log(modalQt) */
+
+  })
    
