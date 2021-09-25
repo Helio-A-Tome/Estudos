@@ -120,6 +120,7 @@ cs('.pizzaInfo--size').forEach((size,sizeIndex)=>{
             qt:modalQt
   
         })
+        atualizaCart()
         fechaModal()
         
       }
@@ -130,4 +131,27 @@ cs('.pizzaInfo--size').forEach((size,sizeIndex)=>{
       console.log(modalQt) */
 
   })
-  
+  //carrinho de compras
+  function atualizaCart(){
+      if(cart.length > 0){
+        c('aside').classList.add('show')
+          //exibindo itens na tela
+          for(let i in cart){
+
+            let pizzaItem = pizzaJson.find((item)=>{
+                return item.id == cart[i].id
+                
+            })
+            console.log(pizzaItem)
+          }
+
+        
+
+      }else{
+
+          c('aside').classList.remove('show')
+
+      }
+      
+
+  }
