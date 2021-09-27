@@ -98,36 +98,60 @@ cs('.pizzaInfo--size').forEach((size,sizeIndex)=>{
 })
   //adicionar ações ao carrinho de compras
   c('.pizzaInfo--addButton').addEventListener('click',()=>{
-      /* //qual é a pizza
-      console.log('pizza'+ modalKey)
-      //qual o tamanho da pizza */
-      let tam =parseInt(c('.pizzaInfo--size.selected').getAttribute('data-key'))
+    /* //qual é a pizza
+    console.log('pizza'+ modalKey)
+    //qual o tamanho da pizza */
+    let tam =parseInt(c('.pizzaInfo--size.selected').getAttribute('data-key'))
 
-      let identificador = pizzaJson[modalKey].id+'@'+ tam
-     /*  let key = cart.findIndex((item)=>{
-          return item.identificador == identificador
-      }) */
-      //ou
-      let key = cart.findIndex((item)=> item.identificador == identificador )
+    let identificador = pizzaJson[modalKey].id+'@'+ tam
+   /*  let key = cart.findIndex((item)=>{
+        return item.identificador == identificador
+    }) */
+    //ou
+    let key = cart.findIndex((item)=> item.identificador == identificador )
 
-      if(key > -1){
-            cart[key].qt += modalQt
-      }else{
-        cart.push({
-            identificador,
-            id:pizzaJson[modalKey].id,
-            tam,
-            qt:modalQt
-  
-        })
-        fechaModal()
-        
-      }
+    if(key > -1){
+
+    }else{
+      cart.push({
+          identificador,
+          id:pizzaJson[modalKey].id,
+          tam,
+          qt:modalQt
+
+      })
+      atualizaCart()
+      fechaModal()
+      
+    }
 
 
-     /*  console.log(tam)
-      //quantas pizzas
-      console.log(modalQt) */
+   /*  console.log(tam)
+    //quantas pizzas
+    console.log(modalQt) */
 
-  })
-  
+})
+//carrinho de compras
+function atualizaCart(){
+    if(cart.length > 0){
+      c('aside').classList.add('show')
+        //exibindo itens na tela
+        for(let i in cart){
+
+          let pizzaItem = pizzaJson.find((item)=>{
+              return item.id == cart[i].id
+              
+          })
+          console.log(pizzaItem)
+        }
+
+      
+
+    }else{
+
+        c('aside').classList.remove('show')
+
+    }
+    
+
+}
