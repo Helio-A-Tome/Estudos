@@ -103,6 +103,8 @@ cs('.pizzaInfo--size').forEach((size,sizeIndex)=>{
     //qual o tamanho da pizza */
     let tam =parseInt(c('.pizzaInfo--size.selected').getAttribute('data-key'))
 
+    console.log("tamanho: "+ tam)
+
     let identificador = pizzaJson[modalKey].id+'@'+ tam
    /*  let key = cart.findIndex((item)=>{
         return item.identificador == identificador
@@ -120,7 +122,7 @@ cs('.pizzaInfo--size').forEach((size,sizeIndex)=>{
           qt:modalQt
 
       })
-      atualizaCart()
+      atualizarCarrinho()
       fechaModal()
       
     }
@@ -131,27 +133,103 @@ cs('.pizzaInfo--size').forEach((size,sizeIndex)=>{
     console.log(modalQt) */
 
 })
-//carrinho de compras
-function atualizaCart(){
+//adicionar evento ao carrinho mobile
+c('.menu-openner').addEventListener('click',()=>{
     if(cart.length > 0){
-      c('aside').classList.add('show')
-        //exibindo itens na tela
-        for(let i in cart){
-
-          let pizzaItem = pizzaJson.find((item)=>{
-              return item.id == cart[i].id
-              
-          })
-          console.log(pizzaItem)
-        }
-
-      
-
-    }else{
-
-        c('aside').classList.remove('show')
-
+        c('aside').style.left= '0'
     }
-    
+
+})
+
+//adicionar evento ao carrinho mobile
+c('.menu-closer').addEventListener('click',()=>{//fechar menu lateral  mobile
+c('aside').style.left='100vw'
+})
+//carrinho de compras 
+function atualizarCarrinho(){
+    c('.menu-openner span').innerHTML= cart.length // adicionando itens ao carrinho mobile
+    if(cart.length > 0){//caso eu tenha itens no carrinho, eu vou mostrar os itens
+        c('aside').classList.add('show')
+        c('.cart').innerHTML = ''
+
+        let subtotal = 0
+        let desconto = 0
+        let total = 0
+
+        for( let i in cart){
+            
+            let pizzaItem =  pizzaJson.find((item)=> item.id == cart[i].id)
+
+            //calculando Subtotal aula 13
+            subtotal += pizzaItem.price * cart[i].qt
+            
+
+           let cartItem = c('.models .cart--item').cloneNode(true)
+           let pizzaSizeName
+           switch(cart[i].tam){// tam é o nome da variavel que define o tamanho das pizzas
+               case 0:
+                   pizzaSizeName = 'P'
+                   break
+                   case 1:
+                       pizzaSizeName = 'M'
+                       break
+                       case 2:
+                           pizzaSizeName = 'G'
+                           break
+
+           }
+            let pizzaName = `${pizzaItem.name}(${pizzaSizeName})`
+           
+
+
+            c('.cart').append(cartItem)
+            cartItem.querySelector('img').src =pizzaItem.img
+            cartItem.querySelector('.cart--item-nome').innerHTML= pizzaName
+            cartItem.querySelector('.cart--item--qt').innerHTML= cart[i].qt
+
+            //adicionando açoes dos botoes do carrinho, aula 13
+            cartItem.querySelector('.cart--item-qtmenos').addEventListener('click',()=>{
+                if(cart[i].qt > 1){
+                    cart[i].qt--
+
+                    atualizarCarrinho()
+                }else{
+                    cart.splice(i, 1)
+                }
+                atualizarCarrinho()//vai fechar o carrinho qdo eu tirar todos os itens
+                   
+            })
+            cartItem.querySelector('.cart--item-qtmais').addEventListener('click',()=>{
+                cart[i].qt++
+                atualizarCarrinho()
+
+            })
+
+             /* let pizzaItem =pizzaJson.find((item)=>{
+                return item.id ==cart[i].id
+              
+            }) */
+           
+        }
+        //calculando desconto ======aula 13
+
+        desconto = subtotal  * 0.1
+        total = subtotal - desconto
+
+        //exibindo os valores na tela aula 13
+        c('.subtotal span:last-child').innerHTML = `R$ ${subtotal.toFixed(2)}`
+        c('.desconto span:last-child').innerHTML = `R$ ${desconto.toFixed(2)}`
+        c('.total span:last-child').innerHTML= `R$ ${total.toFixed(2)}`
+
+    }else{//caso contario eu removo o carrinho
+        c('aside').classList.remove('show')
+        c('aside').style.left="100vw"
+    }
+   
+
+   
 
 }
+ //carrinho de compras
+
+
