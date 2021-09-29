@@ -4,3 +4,4 @@ let descricao = document.querySelector('.d-1-4')
 let aviso = document.querySelector('.d-2')
 let lateral = document.querySelector('.d-1-direito')
 let numeros = document.querySelector('.d-1-3')
+    //Controle das áreas da tela aula 4
