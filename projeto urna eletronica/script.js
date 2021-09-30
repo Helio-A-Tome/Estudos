@@ -5,21 +5,21 @@ let aviso = document.querySelector('.d-2')
 let lateral = document.querySelector('.d-1-direito')
 let numeros = document.querySelector('.d-1-3')
 
-    //Controle das áreas da tela aula 4
+//Controle das áreas da tela aula 4
 
-//variaveis de etapas
+//variaveis de ambiente
 let etapaAtual = 0
 let numero = ''
-let votoBranco= false
+votoBranco = false
 
 
 function comecarEtapa() {
-    
+
     let etapa = etapas[etapaAtual]
-    let votoBranco = false
     let numeroHtml = ''
+    let votoBranco = false
     let numero = ''
-   
+
 
 
     for (let i = 0; i < etapa.numeros; i++) {
@@ -31,7 +31,7 @@ function comecarEtapa() {
         }
 
     }
-   
+
 
     seuVotoPara.style.display = 'none'
     cargo.innerHTML = etapa.titulo
@@ -95,36 +95,29 @@ function clicou(n) {
 }
 
 function branco() {
-    /* if(votoBranco === ''){
-        votoBranco = true
+    numero = ''
+    votoBranco = true
+    seuVotoPara.style.display = 'block'
+    aviso.style.display = 'block'
+    numeros.innerHTML = ''
+    descricao.innerHTML = '<div class="avisoGrande pisca">VOTO EM BRANCO</div>'
+    lateral.innerHTML = ''
 
-        seuVotoPara.style.display = 'block'
-        aviso.style.display = 'block'
-        numeros.innerHTML=''
-        descricao.innerHTML = '<div class="avisoGrande pisca">VOTO EM BRANCO</div>'
 
-    
-    } */
-    if(votoBranco === ''){
-        votoBranco = true
-
-        seuVotoPara.style.display = 'block'
-        aviso.style.display = 'block'
-        numeros.innerHTML=''
-        descricao.innerHTML = '<div class="avisoGrande pisca">VOTO EM BRANCO</div>'
-
-    }else{
-        alert('error')
-    }
 }
 
-
 function corrige() {
-    comecarEtapa()
+    // comecarEtapa()
     document.location.reload()
 }
 
 function confirma() {
+    let etapa = etapas[etapaAtual]
+
+    if (votoBranco === true) {
+        console.log('Voto em branco confirmado')
+    }
+
 
 }
 //Preenchendo Interface com números E teclas branco/confirma/corrige
