@@ -11,6 +11,7 @@ let numeros = document.querySelector('.d-1-3')
 let etapaAtual = 0
 let numero = ''
 votoBranco = false
+let votos = []
 
 
 function comecarEtapa() {
@@ -107,15 +108,50 @@ function branco() {
 }
 
 function corrige() {
-    // comecarEtapa()
-    document.location.reload()
+    numero = ''
+    comecarEtapa()
+    //document.location.reload()
 }
 
 function confirma() {
     let etapa = etapas[etapaAtual]
 
+    let votoConfirmado = false
+
     if (votoBranco === true) {
+
+        votos.push({
+            etapa:etapas[etapaAtual],
+            votos:'branco'
+        })
+        votoConfirmado = true
         console.log('Voto em branco confirmado')
+    }else if(numero.length=== etapa.numeros){
+
+        votoConfirmado = true
+
+        votos.push({
+            etapa:etapas[etapaAtual],
+            votos:numero
+        })
+        console.log('confirmando como '+numero)
+        
+
+    }
+    if(votoConfirmado){
+        etapaAtual++
+    if(etapas[etapaAtual]!== undefined){
+        numero = ''
+
+        comecarEtapa()
+
+
+
+    }else{
+        document.querySelector('.tela').innerHTML='<div class="aviso-gigante pisca">FIM!</div>'
+        console.log(votos)
+    }
+
     }
 
 
