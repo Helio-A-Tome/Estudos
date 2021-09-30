@@ -4,16 +4,23 @@ let descricao = document.querySelector('.d-1-4')
 let aviso = document.querySelector('.d-2')
 let lateral = document.querySelector('.d-1-direito')
 let numeros = document.querySelector('.d-1-3')
+
     //Controle das áreas da tela aula 4
 
 //variaveis de etapas
 let etapaAtual = 0
 let numero = ''
+let votoBranco= false
+
 
 function comecarEtapa() {
+    
     let etapa = etapas[etapaAtual]
-
+    let votoBranco = false
     let numeroHtml = ''
+    let numero = ''
+   
+
 
     for (let i = 0; i < etapa.numeros; i++) {
         if (i === 0) {
@@ -24,6 +31,7 @@ function comecarEtapa() {
         }
 
     }
+   
 
     seuVotoPara.style.display = 'none'
     cargo.innerHTML = etapa.titulo
@@ -86,9 +94,35 @@ function clicou(n) {
     }
 }
 
-function branco() {}
+function branco() {
+    /* if(votoBranco === ''){
+        votoBranco = true
 
-function corrige() {}
+        seuVotoPara.style.display = 'block'
+        aviso.style.display = 'block'
+        numeros.innerHTML=''
+        descricao.innerHTML = '<div class="avisoGrande pisca">VOTO EM BRANCO</div>'
+
+    
+    } */
+    if(votoBranco === ''){
+        votoBranco = true
+
+        seuVotoPara.style.display = 'block'
+        aviso.style.display = 'block'
+        numeros.innerHTML=''
+        descricao.innerHTML = '<div class="avisoGrande pisca">VOTO EM BRANCO</div>'
+
+    }else{
+        alert('error')
+    }
+}
+
+
+function corrige() {
+    comecarEtapa()
+    document.location.reload()
+}
 
 function confirma() {
 
