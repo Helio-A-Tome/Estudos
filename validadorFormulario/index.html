@@ -16,21 +16,21 @@
         </div>
         <div class="rightside">
             <h1>Crie sua conta</h1>
-            <form method="POST" class="b7validator">
+            <form method="POST" class="b7validator" action="cadastra.php">
 
                 <label> 
                     Seu Nome:<br/>
-                    <input type="text" name="name" data-rules="required">
+                    <input type="text" name="name" data-rules="required|min=4">
                 </label>
 
                 <label> 
                     Seu Email:<br/>
-                    <input type="email" name="email">
+                    <input type="text" name="email" data-rules="required|email">
                 </label>
 
                 <label> 
                     Sua Senha:<br/>
-                    <input type="password" name="password">
+                    <input type="password" name="password" data-rules="required|min=6">
                 </label>
 
 

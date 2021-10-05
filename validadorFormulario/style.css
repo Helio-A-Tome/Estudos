@@ -67,3 +67,11 @@
      padding: 4px;
      border-radius: 5px;
  }
+ 
+ .error {
+     background-color: #FF0000;
+     font-size: 11px;
+     color: #FFF;
+     padding: 4px;
+     border-radius: 5px;
+ }
