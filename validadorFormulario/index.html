@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -7,6 +8,7 @@
     <link rel="stylesheet" href="style.css">
     <title>Validador de Formulário</title>
 </head>
+
 <body>
     <div class="screen">
         <div class="leftside">
@@ -14,34 +16,36 @@
         </div>
         <div class="rightside">
             <h1>Crie sua conta</h1>
-            <form method="POST">
+            <form method="POST" class="b7validator">
 
-                <label > 
+                <label> 
                     Seu Nome:<br/>
-                    <input type="text" name="name">
+                    <input type="text" name="name" data-rules="required">
                 </label>
 
-                <label > 
+                <label> 
                     Seu Email:<br/>
                     <input type="email" name="email">
                 </label>
 
-                <label > 
+                <label> 
                     Sua Senha:<br/>
                     <input type="password" name="password">
                 </label>
 
-                
-                    <input type="submit" value="cadastrar">
-               
+
+                <input type="submit" value="cadastrar">
+
 
             </form>
-            <div>
-                ja tem uma conta? <a href="">faça seu login</a>
+            <div class="baixo">
+
+                <p> ja tem uma conta? <a href="">faça seu login</a></p>
             </div>
         </div>
 
     </div>
     <script src="script.js"></script>
 </body>
+
 </html>
